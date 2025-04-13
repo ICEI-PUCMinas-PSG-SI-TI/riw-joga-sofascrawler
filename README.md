@@ -41,7 +41,7 @@ As seguintes bibliotecas são necessárias para executar o script:
 
 ### 1. Clone o Repositório
 ```bash
-git clone https://github.com/ICEI-PUC-Minas-PCO-SI/riw-joga-collection.git
+git clone https://github.com/ICEI-PUCMinas-PSG-SI-TI/riw-joga-sofascrawler.git
 cd SofasCrawler
 ```
 
