@@ -102,7 +102,7 @@ Caso você precise executar o Chrome em modo não headless (com interface gráfi
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 ```
 
-Porém, como o script utiliza o modo headless por padrão, essa configuração geralmente não é necessária.
+Porém, como o script utiliza o modo headless por padrão, essa configuração geralmente é opcional.
 
 ### 6. Configuração do Arquivo `campeonatos.json`
 Crie um arquivo `campeonatos.json` seguindo o formato abaixo:
