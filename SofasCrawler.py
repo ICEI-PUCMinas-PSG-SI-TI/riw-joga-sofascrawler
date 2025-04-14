@@ -8,6 +8,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 
+# Variável global para contar o número total de arquivos criados
+total_arquivos_criados = 0
+
 def iniciar_driver():
     options = Options()
     options.add_argument('--headless')
@@ -22,6 +25,9 @@ def iniciar_driver():
     return driver
 
 def salvar_dados(dados, caminho, formato="txt"):
+
+    global total_arquivos_criados
+
     os.makedirs(os.path.dirname(caminho), exist_ok=True)
     
     with open(caminho, "w", encoding="utf-8") as f:
@@ -41,6 +47,7 @@ def salvar_dados(dados, caminho, formato="txt"):
             f.write(dados)
         else:
             print(f"⚠️ Tipo de dados inesperado: {type(dados)}")
+    total_arquivos_criados += 1
 
 def extrair_tabela_geral_jogadores(driver):
     try:
@@ -210,20 +217,18 @@ if __name__ == "__main__":
     with open("campeonatos.json", "r", encoding="utf-8") as f:
         campeonatos = json.load(f)
 
-    # Contadores globais
-    total_urls_visitadas = 0
-    total_arquivos_criados = 0
-
     # Processa cada campeonato listado no JSON
     for campeonato in campeonatos:
         campeonato_nome = campeonato["campeonato_nome"]
         campeonato_ano = campeonato["campeonato_ano"]
         url_campeonato = campeonato["url_campeonato"]
 
+        total_urls_visitadas = 0
+
         # Os arquivos podem ser salvos em txt ou json
         fortmato_arquivo = "txt"
 
-        print(f"🏆 Coletando dados do {campeonato_nome} ({campeonato_ano})")
+        print(f"🏆 Coletando dados do campeonato {campeonato_nome} ({campeonato_ano})")
 
         driver = iniciar_driver()
 
@@ -233,7 +238,7 @@ if __name__ == "__main__":
         time.sleep(3)
         estatisticas_gerais = extrair_estatisticas_gerais_campeonato(driver)  
         salvar_dados(estatisticas_gerais, os.path.join("resultados", f"{campeonato_nome.lower().replace(' ', '-')}-{campeonato_ano}", "info_campeonato.txt"), formato=fortmato_arquivo)
-        total_arquivos_criados += 1
+        total_urls_visitadas += 1
 
         # Coletar dados dos times e jogadores
         print("📝 Coletando dados de times e jogadores...")
@@ -241,11 +246,7 @@ if __name__ == "__main__":
         for url_time in urls_times:
             total_urls_visitadas += 1
             print(f"🔗 Visitando URL {total_urls_visitadas}/{len(urls_times)}: {url_time}")
-
-            # Coletar dados do time e jogadores
-            arquivos_antes = total_arquivos_criados
             coletar_dados_time(driver, url_time, campeonato_nome, campeonato_ano, formato=fortmato_arquivo)  
-            total_arquivos_criados += 1
 
         driver.quit()
 
