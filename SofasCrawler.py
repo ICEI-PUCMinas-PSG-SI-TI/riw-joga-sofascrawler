@@ -13,13 +13,13 @@ total_arquivos_criados = 0
 
 def iniciar_driver():
     options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--window-size=1920,1080')
-    options.add_argument('--disable-blink-features=AutomationControlled')
-    options.add_experimental_option('excludeSwitches', ['enable-automation'])
-    options.add_experimental_option('useAutomationExtension', False)
+    options.add_argument("--headless")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
     driver = webdriver.Chrome(options=options)
     driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
     return driver
@@ -74,14 +74,23 @@ def extrair_urls_times(driver, url_campeonato):
     driver.get(url_campeonato)
     time.sleep(3)
     soup = BeautifulSoup(driver.page_source, "html.parser")
-    links = soup.find_all("a", href=True)
+    
+    # Find the table containing the standings
+    # Based on previous browser_view, the table is likely within a div with class 'sc-hLBwJm gLqgJp' or similar
+    # Let's try to find the table directly if possible, or a parent div that contains the standings.
+    # The table itself doesn't have a unique ID or class that's easily identifiable from the provided HTML snippets.
+    # However, the team links are within <a> tags that are children of <td> elements in the table rows.
+    # Let's look for <a> tags that have an href containing '/team/football/' and are within a table.
+    
     urls = []
-    for link in links:
-        href = link["href"]
-        if "/time/futebol/" in href:
-            url_completa = "https://www.sofascore.com" + href
-            if url_completa not in urls:
-                urls.append(url_completa)
+    # Find all <a> tags with href attribute containing '/team/football/'
+    team_links = soup.find_all("a", href=lambda href: href and "/team/football/" in href)
+    
+    for link_tag in team_links:
+        href = link_tag["href"]
+        url_completa = "https://www.sofascore.com" + href
+        if url_completa not in urls:
+            urls.append(url_completa)
     return urls
 
 def extrair_estatisticas_time(html):
@@ -128,8 +137,31 @@ def extrair_jogadores(driver):
                 link = "https://www.sofascore.com" + link_tag["href"] if link_tag else ""
                 posicao = linha.find("span", class_="Text").text.strip()
                 idade = linha.find("div", class_="Text gQjAEx").text.strip()
-                jogadores.append({"nome": nome, "posição": posicao, "idade": idade, "link": link})
-            except:
+
+                # Attempt to extract jersey number
+                # The jersey number is usually in a <span> with class 'Cell-number' or similar, or directly in a <td>
+                # We need to inspect the HTML to find the correct selector.
+                # Based on the image, the number is directly in a <td> element, not a span with class 'Cell-number'
+                # Let's try to find the <td> that contains the number.
+                # Assuming the number is in the first <td> after the player's name/link, or a specific class.
+                # From the image, it looks like the number is in a <td> element with a specific class.
+                # Let's try to find a <td> with class 'Cell-number' or similar, or just the first <td> after the name.
+                # For now, let's assume it's the first <td> with a numeric value after the player's name.
+                # This needs to be verified by inspecting the actual HTML of a player list page.
+                numero_camisa_tag = linha.find("td", class_="Cell-number") # This is a placeholder, needs verification
+                if not numero_camisa_tag:
+                    # If not found with Cell-number, try to find the first td that contains only numbers
+                    all_tds = linha.find_all("td")
+                    for td in all_tds:
+                        if td.text.strip().isdigit():
+                            numero_camisa_tag = td
+                            break
+
+                numero_camisa = numero_camisa_tag.text.strip() if numero_camisa_tag else "N/A"
+
+                jogadores.append({"nome": nome, "posição": posicao, "idade": idade, "link": link, "numero_camisa": numero_camisa})
+            except Exception as e:
+                print(f"Erro ao extrair jogador: {e}")
                 continue
     return jogadores
 
@@ -169,16 +201,23 @@ def coletar_dados_time(driver, url_time, campeonato_nome, campeonato_ano, format
     salvar_dados(estatisticas, os.path.join(pasta_time, "info_time." + formato), formato)
     jogadores = extrair_jogadores(driver)
     for jogador in jogadores:
-        print(f"   👤 Coletando jogador: {jogador['nome']}")
+        print(f"   👤 Coletando jogador: {jogador['nome']} (Camisa: {jogador['numero_camisa']})")
         try:
             stats = extrair_estatisticas_jogador(driver, jogador["link"], campeonato_nome)
+            # Modify filename to include jersey number
             nome_slug = jogador["nome"].lower().replace(" ", "-")
-            salvar_dados(stats, os.path.join(pasta_time, "jogadores", f"{nome_slug}.{formato}"), formato)
+            numero_camisa_slug = str(jogador["numero_camisa"]).replace("/", "-") # Handle potential slashes in N/A
+            filename = f"{nome_slug}-{numero_camisa_slug}.{formato}" if jogador["numero_camisa"] != "N/A" else f"{nome_slug}.{formato}"
+            salvar_dados(stats, os.path.join(pasta_time, "jogadores", filename), formato)
         except Exception as e:
             print(f"   ❌ Erro ao coletar jogador {jogador['nome']}: {e}")
 
 def extrair_estatisticas_gerais_campeonato(driver):
     try:
+        # Save page source to a file for inspection
+        with open("page_source_campeonato.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+
         WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'estatísticas')]"))
         )
@@ -186,17 +225,21 @@ def extrair_estatisticas_gerais_campeonato(driver):
         soup = BeautifulSoup(driver.page_source, "html.parser")
         dados_gerais = {}
 
-        estatisticas_container = soup.find("span", string="estatísticas")
+        # Find the main container for statistics
+        # Looking for a div with specific classes that contains the 'estatísticas' span
+        # Based on the new HTML, the container for general statistics is a div with class 'sc-hLBwJm gLqgJp' 
+        estatisticas_container = soup.find("div", class_="sc-hLBwJm gLqgJp") 
+        
         if estatisticas_container:
-            parent_div = estatisticas_container.find_parent("div", class_="bg_surface.s2")
-            if parent_div:
-                estatisticas_linhas = parent_div.find_all("div", class_="d_flex ai_center jc_space-between py_sm mdDown:px_sm md:px_lg")
-                for linha in estatisticas_linhas:
-                    spans = linha.find_all("span", class_="textStyle_body.medium c_neutrals.nLv1")
-                    if len(spans) == 2:
-                        chave = spans[0].text.strip()
-                        valor = spans[1].text.strip()
-                        dados_gerais[chave] = valor
+            # Find all rows within this container that hold key-value pairs
+            # The rows are now 'div' elements with class 'sc-bczRLJ fqjJgC' 
+            estatisticas_linhas = estatisticas_container.find_all("div", class_="sc-bczRLJ fqjJgC") 
+            for linha in estatisticas_linhas:
+                spans = linha.find_all("span")
+                if len(spans) == 2:
+                    chave = spans[0].text.strip()
+                    valor = spans[1].text.strip()
+                    dados_gerais[chave] = valor
 
         if not dados_gerais:
             print("❌ Não foi possível extrair as estatísticas gerais do campeonato. Verifique o layout da página ou os seletores.")

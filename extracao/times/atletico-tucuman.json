@@ -1,0 +1,43 @@
+{
+  "Geral": {
+    "Partidas": "16",
+    "Gols marcados": "17",
+    "Gols sofridos": "21",
+    "Assistências": "11"
+  },
+  "Precisão de passe": {
+    "Posse de bola": "51%",
+    "Passes certos": "279 (75.8%)",
+    "Passes no próprio campo": "135 (87.4%)",
+    "Passes certos no terço final": "150 (64.2%)",
+    "Bolas longas": "19.3 (44.9%)",
+    "Cruzamentos certos": "5.8 (29.2%)"
+  },
+  "Defendendo": {
+    "Jogos sem sofrer gols": "4",
+    "Gols sofridos por jogo": "1.3",
+    "Desarmes por jogo": "18.5",
+    "Interceptações por jogo": "8.4",
+    "Cortes por jogo": "26.4",
+    "Defesas por jogo": "2.8",
+    "Bolas recuperadas por jogo": "48.6",
+    "Erros que levaram à finalização": "3",
+    "Erros que levaram ao gol": "2",
+    "Pênaltis cometidos": "4",
+    "Gols de pênalti concedidos": "2",
+    "Tirar em cima da linha": "1",
+    "Último homem a desarmar": "2"
+  },
+  "Diversos": {
+    "Desarmes por partida": "55.1 (49.9%)",
+    "Duelos ganhos pelo chão": "33.8 (50%)",
+    "Duelos aéreos ganhos": "21.3 (49.8%)",
+    "Perda da posse de bola por jogo": "141.8",
+    "Laterais por jogo": "21.1",
+    "Tiros de meta por jogo": "8.8",
+    "Impedimentos por jogo": "2.6",
+    "Faltas por jogo": "12.9",
+    "Cartões amarelos por partida": "2.4",
+    "Cartões vermelhos": "0"
+  }
+}

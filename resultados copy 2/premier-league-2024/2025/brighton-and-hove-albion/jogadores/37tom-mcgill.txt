@@ -1,0 +1,11 @@
+[Passe]
+Assistências: 0
+
+[Defendendo]
+Jogos sem tomar gols: 0
+
+[Cartões]
+Cartões amarelos: 0
+Segundo amarelo: 0
+Cartões vermelhos: 0
+

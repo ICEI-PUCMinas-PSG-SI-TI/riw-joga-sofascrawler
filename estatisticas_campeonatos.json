@@ -1,0 +1,57 @@
+{
+  "premier-league-2024-2025": {
+    "gols": 985,
+    "média_de_gols": 2.97,
+    "vitórias_do_time_mandante": 0.4,
+    "vitórias_do_time_visitante": 0.35,
+    "empates": 0.25,
+    "cartões_amarelos": 4.27,
+    "cartões_vermelhos": 0.13,
+    "número_de_equipes": 20,
+    "divisão": 1
+  },
+  "la-liga-2024-2025": {
+    "gols": 805,
+    "média_de_gols": 2.61,
+    "vitórias_do_time_mandante": 0.43,
+    "vitórias_do_time_visitante": 0.3,
+    "empates": 0.27,
+    "cartões_amarelos": 4.7,
+    "cartões_vermelhos": 0.22,
+    "número_de_equipes": 20,
+    "divisão": 1
+  },
+  "bundesliga-2024-2025": {
+    "gols": 802,
+    "média_de_gols": 3.1,
+    "vitórias_do_time_mandante": 0.41,
+    "vitórias_do_time_visitante": 0.36,
+    "empates": 0.23,
+    "cartões_amarelos": 4,
+    "cartões_vermelhos": 0.18,
+    "número_de_equipes": 18,
+    "divisão": 1
+  },
+  "serie-a-2024-2025": {
+    "gols": 822,
+    "média_de_gols": 2.58,
+    "vitórias_do_time_mandante": 0.4,
+    "vitórias_do_time_visitante": 0.3,
+    "empates": 0.3,
+    "cartões_amarelos": 3.91,
+    "cartões_vermelhos": 0.19,
+    "número_de_equipes": 20,
+    "divisão": 1
+  },
+  "liga-profesional-de-fútbol-2025": {
+    "gols": 411,
+    "média_de_gols": 1.97,
+    "vitórias_do_time_mandante": 0.42,
+    "vitórias_do_time_visitante": 0.25,
+    "empates": 0.33,
+    "cartões_amarelos": 5.1,
+    "cartões_vermelhos": 0.19,
+    "número_de_equipes": 30,
+    "divisão": 1
+  }
+}

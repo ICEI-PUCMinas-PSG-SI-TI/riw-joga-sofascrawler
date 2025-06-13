@@ -1,0 +1,26 @@
+[Defendendo]
+Interceptações: 1.0
+Desarmes por jogo: 1.1
+Bolas recuperadas no ataque: 0.4
+Bolas recuperadas por jogo: 2.6
+Dribles sofridos por jogo: 0.5
+Cortes: 1.0
+Erros que levaram à finalização: 0
+Erros que levaram ao gol: 1
+Pênaltis cometidos: 1
+
+[Outros (por partida)]
+Dribles certos por jogo: 0.2 (35%)
+Disputas de bola vencidas: 2.1 (48%)
+Duelos ganhos no chão: 1.9 (51%)
+Duelos aéreos ganhos: 0.2 (32%)
+Perda da posse de bola por jogo: 11.0
+Faltas por jogo: 0.4
+Faltas sofridas: 0.6
+Impedimentos: 0.4
+
+[Cartões]
+Cartões amarelos: 4
+Segundo amarelo: 0
+Cartões vermelhos: 0
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Busca de Futebol</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; }
+        .search-box { padding: 20px; background: #f5f5f5; border-radius: 5px; }
+        .results { margin-top: 20px; }
+        .result-item { padding: 10px; border-bottom: 1px solid #eee; }
+        .player { background-color: #f0f8ff; }
+        .team { background-color: #fff0f0; }
+        .score { float: right; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <h1>Busca de Dados de Futebol</h1>
+        <form id="searchForm">
+            <input type="text" name="q" placeholder="Ex: jogadores com mais de 20 gols" style="width: 70%; padding: 8px;">
+            <select name="tournament">
+                <option value="">Todos os campeonatos</option>
+                {% for tournament in tournaments %}
+                <option value="{{ tournament }}">{{ tournament }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    
+    <div class="results" id="resultsContainer">
+        <!-- Resultados serão inseridos aqui via JavaScript -->
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const params = new URLSearchParams(formData);
+            
+            fetch('/search?' + params.toString())
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('resultsContainer');
+                    container.innerHTML = '';
+                    
+                    if (data.length === 0) {
+                        container.innerHTML = '<p>Nenhum resultado encontrado.</p>';
+                        return;
+                    }
+                    
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = `result-item ${item.type}`;
+                        
+                        let html = `<h3>${item.name}</h3>`;
+                        html += `<p>${item.snippet}</p>`;
+                        html += `<p><strong>Campeonato:</strong> ${item.tournament}`;
+                        if (item.type === 'player') {
+                            html += ` | <strong>Time:</strong> ${item.team}`;
+                        }
+                        html += `</p>`;
+                        html += `<span class="score">Relevância: ${item.score.toFixed(2)}</span>`;
+                        
+                        div.innerHTML = html;
+                        container.appendChild(div);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

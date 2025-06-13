@@ -1,0 +1,41 @@
+[Geral]
+Partidas: 32
+Gols marcados: 36
+Gols sofridos: 54
+Assistências: 20
+
+[Precisão de passe]
+Posse de bola: 47.7%
+Passes certos: 356 (82%)
+Passes no próprio campo: 201 (89.4%)
+Passes certos no terço final: 159 (70.7%)
+Bolas longas: 17.2 (48.7%)
+Cruzamentos certos: 4.2 (26%)
+
+[Defendendo]
+Jogos sem tomar gols: 6
+Gols sofridos por jogo: 1.7
+Desarmes por jogo: 16.9
+Interceptações por jogo: 9
+Cortes por jogo: 26
+Defesas por jogo: 3.5
+Bolas recuperadas por jogo: 48.1
+Erros que levaram à finalização: 15
+Erros que levaram ao gol: 8
+Pênaltis cometidos: 3
+Gols de pênalti concedidos: 3
+Tirar em cima da linha: 1
+Último homem a desarmar: 9
+
+[Diversos]
+Desarmes por partida: 52.5 (50%)
+Duelos ganhos no chão: 36.7 (49.6%)
+Duelos aéreos ganhos: 15.8 (50.9%)
+Perda da posse de bola por jogo: 127.8
+Laterais por jogo: 15.7
+Tiros de meta por jogo: 8.4
+Impedimentos por jogo: 2
+Faltas por jogo: 11.4
+Cartões amarelos por partida: 2.1
+Cartões vermelhos: 3
+

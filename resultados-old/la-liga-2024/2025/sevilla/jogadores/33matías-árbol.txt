@@ -1,0 +1,19 @@
+[Passe]
+Assistências: 0
+Passes importantes: 0.0
+Passes certos: 19.4 (82%)
+Bolas longas: 6.0 (61%)
+Cruzamentos certos: 0.0 (0%)
+
+[Defendendo]
+Jogos sem tomar gols: 1
+Bolas recuperadas por jogo: 7.0
+Dribles sofridos por jogo: 0.0
+Cortes: 0.6
+Erros que levaram à finalização: 0
+
+[Cartões]
+Cartões amarelos: 0
+Segundo amarelo: 0
+Cartões vermelhos: 0
+

@@ -1,0 +1,8 @@
+[Passe]
+Assistências: 1
+
+[Cartões]
+Cartões amarelos: 2
+Segundo amarelo: 0
+Cartões vermelhos: 1
+

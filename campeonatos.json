@@ -1,127 +1,107 @@
 [
     {
-      "campeonato_nome": "Liga Profesional de Fútbol",
-      "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/argentina/liga-profesional-de-futbol/155#id:70268"
-    },
-    {
-      "campeonato_nome": "Premier League",
-      "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/inglaterra/premier-league/17#id:12345"
-    },
-    {
-      "campeonato_nome": "La Liga",
-      "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/espanha/la-liga/8#id:67890"
-    },
-    {
       "campeonato_nome": "Serie A",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/italia/serie-a/23#id:54321"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/italy/serie-a/23#id:63515"
     },
     {
-      "campeonato_nome": "Bundesliga",
+      "campeonato_nome": "Serie B",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/alemanha/bundesliga/35#id:98765"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/italy/serie-b/53#id:63812"
     },
     {
       "campeonato_nome": "Campeonato Brasileiro Série A",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/brasil/brasileirao-serie-a/325#id:11111"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/brazil/brasileirao-serie-a/325#id:72034"
     },
     {
       "campeonato_nome": "Campeonato Brasileiro Série B",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/brasil/brasileirao-serie-b/326#id:22222"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/brazil/brasileirao-serie-b/390#id:72603"
     },
     {
-      "campeonato_nome": "Primeira Liga (Campeonato Português)",
+      "campeonato_nome": "Campeonato Português",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/portugal/liga-portugal/19#id:33333"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futsal/portugal/1a-divisao/596#id:65125"
     },
     {
       "campeonato_nome": "Ligue 1",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/franca/ligue-1/13#id:44444"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/france/ligue-1/34#id:61736"
     },
     {
       "campeonato_nome": "Eredivisie",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/holanda/eredivisie/37#id:55555"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/netherlands/eredivisie/37#id:61666"
     },
     {
       "campeonato_nome": "Super Lig",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/turquia/super-lig/29#id:66666"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/turkey/trendyol-super-lig/52#id:63814"
     },
     {
       "campeonato_nome": "Major League Soccer (MLS)",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/eua/mls/40#id:77777"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/usa/mls/242#id:70158"
     },
     {
       "campeonato_nome": "Campeonato Argentino Primera Nacional",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/argentina/primera-nacional/156#id:88888"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/argentina/liga-profesional-de-futbol/155#id:70268"
     },
     {
       "campeonato_nome": "J-League",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/japao/j-league/45#id:99999"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/japan/j1-league/196#id:69871"
     },
     {
       "campeonato_nome": "Scottish Premiership",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/escocia/scottish-premiership/18#id:101010"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/scotland/premiership/36#id:62408"
     },
     {
       "campeonato_nome": "Campeonato Uruguaio",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/uruguai/campeonato-uruguaio/49#id:111111"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/uruguay/primera-division/278#id:71306"
     },
     {
-      "campeonato_nome": "Superliga Argentina",
-      "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/argentina/superliga/157#id:121212"
+      "campeonato_nome": "LaLiga",
+      "campeonato_ano": "24/25",
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/spain/laliga/8#id:61643"
     },
     {
       "campeonato_nome": "Russian Premier League",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/russia/premier-league/30#id:131313"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/russia/premier-liga/203#id:61712"
     },
     {
       "campeonato_nome": "Chinese Super League",
       "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/china/super-league/50#id:141414"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/china/cfa-china-league/782#id:72904"
     },
     {
       "campeonato_nome": "Championship (Inglaterra - 2ª Divisão)",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/inglaterra/championship/20#id:151515"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/england/championship/18#id:61961"
     },
     {
       "campeonato_nome": "Segunda División (Espanha)",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/espanha/segunda-division/9#id:161616"
-    },
-    {
-      "campeonato_nome": "Serie B (Itália)",
-      "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/italia/serie-b/24#id:171717"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/spain/laliga-2/54#id:62048"
     },
     {
       "campeonato_nome": "2. Bundesliga (Alemanha)",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/alemanha/2-bundesliga/36#id:181818"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/germany/2-bundesliga/44#id:63514"
+    },
+    {
+      "campeonato_nome": "Bundesliga",
+      "campeonato_ano": "2024/2025",
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/germany/2-bundesliga/44#id:63514"
     },
     {
       "campeonato_nome": "Super League (Grécia)",
       "campeonato_ano": "2024/2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/grecia/super-league/28#id:191919"
-    },
-    {
-      "campeonato_nome": "Brasileirão Série C",
-      "campeonato_ano": "2025",
-      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/brasil/brasileirao-serie-c/327#id:202020"
+      "url_campeonato": "https://www.sofascore.com/pt/torneio/futebol/greece/stoiximan-super-league/185#id:64052"
     }
   ]  

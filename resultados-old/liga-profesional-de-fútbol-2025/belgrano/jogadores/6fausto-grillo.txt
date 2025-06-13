@@ -1,0 +1,39 @@
+[Passe]
+Assistências: 0
+Ações com a bola por jogo: 47.1
+Grandes chances criadas: 0
+Passes importantes: 0.0
+Passes certos: 20.9 (75%)
+Passes no próprio campo: 12.3 (90%)
+Passes certos no terço final: 9.1 (60%)
+Bolas longas: 1.6 (34%)
+Passes certos cavados: 1.1 (40%)
+Cruzamentos certos: 0.6 (50%)
+
+[Defendendo]
+Jogos sem tomar gols: 2
+Interceptações: 0.7
+Desarmes por jogo: 2.9
+Bolas recuperadas no ataque: 0.3
+Bolas recuperadas por jogo: 1.6
+Dribles sofridos por jogo: 0.7
+Cortes: 3.7
+Erros que levaram à finalização: 0
+Erros que levaram ao gol: 0
+Pênaltis cometidos: 0
+
+[Outros (por partida)]
+Dribles certos por jogo: 0.3 (67%)
+Disputas de bola vencidas: 5.7 (59%)
+Duelos ganhos no chão: 3.6 (60%)
+Duelos aéreos ganhos: 2.1 (58%)
+Perda da posse de bola por jogo: 11.3
+Faltas por jogo: 1.4
+Faltas sofridas: 0.4
+Impedimentos: 0.0
+
+[Cartões]
+Cartões amarelos: 3
+Segundo amarelo: 1
+Cartões vermelhos: 1
+

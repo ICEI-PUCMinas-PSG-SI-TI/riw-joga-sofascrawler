@@ -1,0 +1,9 @@
+Gols: 822
+Média de gols: 2.58
+Vitórias do time mandante: 40%
+Vitórias do time visitante: 30%
+Empates: 30%
+Cartões amarelos: 3.91
+Cartões vermelhos: 0.19
+Número de equipes: 20
+Divisão: 1

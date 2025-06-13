@@ -1,0 +1,8 @@
+[Defendendo]
+Jogos sem tomar gols: 3
+
+[Cartões]
+Cartões amarelos: 1
+Segundo amarelo: 0
+Cartões vermelhos: 0
+
